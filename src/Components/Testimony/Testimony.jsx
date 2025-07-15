@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 // Updated static data with city and country
@@ -42,7 +42,7 @@ const Testimony = () => {
   };
 
   return (
-    <section className="ml-[24px] mr-[24px] mt-[50px] lg:mr-[80px] mb-[75px] lg:ml-[80px]">
+    <section className="ml-[24px] mr-[24px] mt-[50px] lg:mr-[80px] mb-[20px] lg:ml-[80px]">
       <h3 className="text-[26px] md:text-[34px] font-extrabold text-primary mb-6 text-center">
         What Clients Say
       </h3>
@@ -73,6 +73,11 @@ const Testimony = () => {
           )}
         </div>
       ))}
+      <div className="flex justify-center mt-8">
+        <button className="bg-accent text-neutral px-6 py-3 rounded-lg font-bold hover:bg-primaryDark hover:text-background transition">
+          Create Testimony
+        </button>
+      </div>
     </section>
   );
 };
