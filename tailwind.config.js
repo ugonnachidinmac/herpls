@@ -12,6 +12,13 @@ module.exports = {
         neutral: "#1F2937", // gunmetal/charcoal
         txtWhite: "#fff", // light text
         background: "#F9FAFB", // light background
+        // Yellow
+
+         lightAccent: "#FFFBEB",
+        softAccent: "#FDE68A",
+        accent: "#FBBF24",       // your main accent
+        goldenAccent: "#F59E0B",
+        deepAccent: "#D97706",
 
       },
     },

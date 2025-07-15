@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '../Hero/Hero'
 import RecentLists from '../RecentLists/RecentLists'
+import Testimony from '../Testimony/Testimony'
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
     <div>
         <Hero /> 
         <RecentLists />
+        <Testimony />
     </div>
    </section>
    </>
