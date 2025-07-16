@@ -78,14 +78,15 @@ function NavBar() {
           onMouseLeave={() => setIsLoginHovered(false)}
           className={`rounded-[8px] font-bold py-2 px-4 flex items-center justify-center border transition duration-300 ${loginBtnClass}`}
         >
-          Login
+          <Link to="/Login">Login</Link>
+          
           <FaArrowRightToBracket className="ml-2" />
         </button>
 
         <button
           className={`rounded-[8px] font-bold py-2 px-4 flex items-center justify-center border transition duration-300 ${signupBtnClass}`}
         >
-          Sign Up
+      <Link to="/SignUp">Sign up</Link>
         </button>
       </div>
 

@@ -73,9 +73,12 @@ const Testimony = () => {
           )}
         </div>
       ))}
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-between mt-8">
         <button className="bg-accent text-neutral px-6 py-3 rounded-lg font-bold hover:bg-primaryDark hover:text-background transition">
           Create Testimony
+        </button>
+        <button className="bg-accent text-neutral px-6 py-3 font-bold hover:bg-primaryDark hover:text-background transition rounded-[32px]">
+         see more
         </button>
       </div>
     </section>

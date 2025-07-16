@@ -1,20 +1,50 @@
-import { useState } from 'react'
-import './App.css'
-import HomePage from './Components/HomePage/HomePage.jsx'
-import Applayout from './Components/Applayout/Applayout.jsx'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import DelayedLazy from "./Components/DelayedLazy/DelayedLazy.jsx";
+
+// Each route lazy-loads the entire structure (Applayout + HomePage)
+const HomeRoute = () => (
+  <DelayedLazy
+    import={() =>
+      import("./Components/HomePage/HomePage.jsx").then((module) => ({
+        default: () => {
+          const HomePage = module.default;
+          const Applayout = React.lazy(() =>
+            import("./Components/Applayout/Applayout.jsx")
+          );
+          return (
+            <React.Suspense fallback={<div></div>}>
+              <Applayout>
+                <HomePage />
+              </Applayout>
+            </React.Suspense>
+          );
+        },
+      }))
+    }
+  />
+);
+
+const SignUp = () => (
+  <DelayedLazy import={() => import("./Components/SignUp/SignUp.jsx")} />
+);
+
+const Login = () => (
+  <DelayedLazy import={() => import("./Components/Login/Login.jsx")} />
+);
+const Dashboard = () => (
+  <DelayedLazy import={() => import("./Components/Dashboard/Dashboard.jsx")} />
+);
 
 function App() {
   return (
-    <>
-
-   
-    <Applayout><HomePage /></Applayout>
-    
-      {/* <h1 className="text-[24px] font-bold underline text-[#1B00CC]">
-      Hello world!
-    </h1> */}
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<HomeRoute />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

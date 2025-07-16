@@ -10,7 +10,7 @@ const Hero = () => {
             Find Your Perfect Space, Anytime, Anywhere
           </h2>
           <p className="text-[18px] mb-3 text-justify">
-            Whether you're looking to buy, rent, or lease — Herpls helps you
+            Whether you're looking to buy, sale, rent, or lease — Herpls helps you
             discover verified homes, lands, estates, and commercial spaces
             across Nigeria (and soon, beyond).
           </p>
