@@ -77,16 +77,13 @@ const SignUp = () => {
       return;
     }
 
-    toast.success("Signup successful!");
-    setFormData({
-      username: "",
-      firstName: "",
-      otherNames: "",
-      contact: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
+
+    toast.success("Signup successful!!!");
+
+    // ✅ Redirect to login after 2 seconds
+    setTimeout(() => {
+      navigate("/login");
+    }, 4000);
   };
 
   // Carousel auto-slide

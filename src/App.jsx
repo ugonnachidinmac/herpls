@@ -35,6 +35,24 @@ const Login = () => (
 const Dashboard = () => (
   <DelayedLazy import={() => import("./Components/Dashboard/Dashboard.jsx")} />
 );
+const PaymentPage = () => (
+  <DelayedLazy import={() => import("./Components/AddNewListing/PaymentPage.jsx")} />
+);
+const AddNewListingpg = () => (
+  <DelayedLazy
+    import={() => import("./Components/AddNewListing/AddNewListingpg.jsx")}
+  />
+);
+const PreviewPage = () => (
+  <DelayedLazy
+    import={() => import("./Components/AddNewListing/PreviewPage.jsx")}
+  />
+);
+const SettingPage = () => (
+  <DelayedLazy
+    import={() => import("./Components/SettingPage/SettingPage.jsx")}
+  />
+);
 
 function App() {
   return (
@@ -43,6 +61,10 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/payment" element={<PaymentPage />} />
+      <Route path="/add-listing" element={<AddNewListingpg />} />
+      <Route path="/preview" element={<PreviewPage />} />
+      <Route path="/settingPage" element={<SettingPage />} />
     </Routes>
   );
 }

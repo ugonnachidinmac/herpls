@@ -1,29 +1,52 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   FaTachometerAlt,
-  FaRegBell,
+  FaHome,
+  FaPlusCircle,
+  FaEnvelope,
+  FaUser,
   FaCog,
   FaQuestionCircle,
   FaSignOutAlt,
+  FaRegBell,
+   FaMoneyBill,
 } from "react-icons/fa";
+// import { FaRegBell } from "react-icons/fa";
+
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+
+const routeInfo = {
+  "/dashboard": { name: "Dashboard", icon: <FaTachometerAlt className="text-xl" /> },
+  "/payment": { name: "Payment", icon: < FaMoneyBill className="text-xl" /> },
+  "/my-listings": { name: "My Listings", icon: <FaHome className="text-xl" /> },
+  "/add-listing": { name: "Add New Listing", icon: <FaPlusCircle className="text-xl" /> },
+  "/inquiries": { name: "Inquiries", icon: <FaEnvelope className="text-xl" /> },
+  "/profile": { name: "Profile", icon: <FaUser className="text-xl" /> },
+  "/settings": { name: "Settings", icon: <FaCog className="text-xl" /> },
+};
 
 const TopRightSide = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleDropdown = () => {
     setShowDropdown((prev) => !prev);
   };
 
+  const currentRoute = routeInfo[location.pathname] || {
+    name: "Dashboard",
+    icon: <FaTachometerAlt className="text-xl" />,
+  };
+
   return (
     <section className="bg-white w-full rounded-xl shadow-md p-4 mb-6">
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-        {/* Left: Dashboard Heading */}
+        {/* Left: Dynamic Heading Based on Route */}
         <div className="flex items-center gap-3 text-primary font-semibold text-lg cursor-pointer hover:text-primaryDark transition">
-          <FaTachometerAlt className="text-xl" />
-          <p>Dashboard</p>
+          {currentRoute.icon}
+          <p>{currentRoute.name}</p>
         </div>
 
         {/* Right: User and Notification */}
@@ -66,7 +89,10 @@ const TopRightSide = () => {
                     <FaQuestionCircle className="text-sm" />
                     Help
                   </li>
-                  <li className="flex items-center gap-2 px-4 py-2 hover:bg-primaryDark hover:text-white cursor-pointer" onClick={() => navigate("/")}>
+                  <li
+                    className="flex items-center gap-2 px-4 py-2 hover:bg-primaryDark hover:text-white cursor-pointer"
+                    onClick={() => navigate("/")}
+                  >
                     <FaSignOutAlt className="text-sm" />
                     Log Out
                   </li>
