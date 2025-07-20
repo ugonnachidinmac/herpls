@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io";
+import { Link } from "react-router-dom"; // Make sure this is at the top
 
 const Footer = () => {
   return (
@@ -42,12 +43,28 @@ const Footer = () => {
           <h3 className="font-extrabold text-[20px] md:text-[22px] text-accent tracking-widest">
             Links
           </h3>
-          <ul className="mt-3 text-[16px] md:text-[18px] tracking-wide font-bold space-y-3 cursor-pointer">
-            <li className="hover:border hover:border-accent px-3 py-2 w-fit">Home</li>
-            <li className="hover:border hover:border-accent px-3 py-2 w-fit">About Us</li>
-            <li className="hover:border hover:border-accent px-3 py-2 w-fit">View Chart</li>
-            <li className="hover:border hover:border-accent px-3 py-2 w-fit">Agents</li>
-          </ul>
+          <ul className="mt-3 text-[16px] md:text-[18px] tracking-wide font-bold space-y-3">
+  <li>
+    <Link to="/" className="hover:border hover:border-accent px-3 py-2 w-fit inline-block">
+      Home
+    </Link>
+  </li>
+  <li>
+    <Link to="/about" className="hover:border hover:border-accent px-3 py-2 w-fit inline-block">
+      About Us
+    </Link>
+  </li>
+  <li>
+    <Link to="/chart" className="hover:border hover:border-accent px-3 py-2 w-fit inline-block">
+      View Chart
+    </Link>
+  </li>
+  <li>
+    <Link to="/agents" className="hover:border hover:border-accent px-3 py-2 w-fit inline-block">
+      Agents
+    </Link>
+  </li>
+</ul>
         </div>
 
         {/* Resources */}

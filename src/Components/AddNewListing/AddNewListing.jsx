@@ -65,6 +65,17 @@ const AddNewListing = () => {
                   placeholder="Enter title"
                 />
               </fieldset>
+              <fieldset className="flex-1">
+                <label className="block font-semibold mb-1">Hit</label>
+                <input
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 p-2 rounded"
+                  placeholder="One line hit about the lists"
+                />
+              </fieldset>
 
               <fieldset className="flex-1">
                 <label className="block font-semibold mb-1">Agent Name</label>

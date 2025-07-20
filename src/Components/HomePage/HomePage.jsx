@@ -1,22 +1,30 @@
-import React from 'react'
-import Hero from '../Hero/Hero'
-import RecentLists from '../RecentLists/RecentLists'
-import Testimony from '../Testimony/Testimony'
-import SearchAndExplore from '../SearchAndExplore/SearchAndExplore'
+import React, { useRef } from 'react';
+import Hero from '../Hero/Hero';
+import RecentLists from '../RecentLists/RecentLists';
+import Testimony from '../Testimony/Testimony';
+import SearchAndExplore from '../SearchAndExplore/SearchAndExplore';
 
 const HomePage = () => {
-  return (
-   <>
-   <section className='bg-background'>
-    <div>
-        <Hero /> 
-        <RecentLists />
-        <Testimony /> 
-        <SearchAndExplore />
-    </div>
-   </section>
-   </>
-  )
-}
+  const searchRef = useRef(null);
 
-export default HomePage
+  const scrollToSearch = () => {
+    searchRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <section className="bg-background">
+        <div>
+          <Hero onExploreClick={scrollToSearch} />
+          <RecentLists />
+          <Testimony />
+          <div ref={searchRef}>
+            <SearchAndExplore />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default HomePage;

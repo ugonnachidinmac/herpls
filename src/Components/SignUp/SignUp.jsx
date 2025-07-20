@@ -82,7 +82,7 @@ const SignUp = () => {
 
     // ✅ Redirect to login after 2 seconds
     setTimeout(() => {
-      navigate("/login");
+      navigate("/login"); 
     }, 4000);
   };
 

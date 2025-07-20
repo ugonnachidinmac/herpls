@@ -7,7 +7,7 @@ const TheList = () => {
       listImg:
         "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1752582156/Image_16_yjgau6.png",
       listTitle: "Luxury Estate",
-      description: "A luxury estate located in Rukpoku with modern facilities.",
+      hit: "A luxury estate located in Rukpoku with modern facilities.",
       agentName: "Chidinma",
       listType: "Rent",
       price: "₦1,500,000",
@@ -22,7 +22,7 @@ const TheList = () => {
       listImg:
         "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1752588029/Image_wqhtue.png",
       listTitle: "3-Bedroom Flat",
-      description: "Spacious 3-bedroom flat in Port Harcourt city center.",
+      hit: "Spacious 3-bedroom flat in Port Harcourt city center.",
       agentName: "John Doe",
       listType: "Sale",
       price: "₦22,000,000",
@@ -37,7 +37,7 @@ const TheList = () => {
       listImg:
         "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1752582156/Image_16_yjgau6.png",
       listTitle: "Commercial Space",
-      description: "Open-plan office space ideal for startups and businesses.",
+      hit: "Open-plan office space ideal for startups and businesses.",
       agentName: "Blessing",
       listType: "Lease",
       price: "₦750,000",
@@ -68,7 +68,7 @@ const TheList = () => {
                 <h6 className="text-[18px] font-bold text-[#1B00CC] mb-2">
                   {item.listTitle}
                 </h6>
-                <p className="text-gray-700 mb-4">{item.description}</p>
+                <p className="text-gray-700 mb-4">{item.hit}</p>
 
                 <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
                   <p>

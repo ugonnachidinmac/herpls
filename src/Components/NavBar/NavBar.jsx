@@ -55,7 +55,7 @@ function NavBar() {
         </li>
         <li>
           <Link
-            to="/portfolio"
+            to="/userSignUp"
             className="hover:text-[#1B00CC] hover:underline hover:decoration-[#1B00CC] hover:underline-offset-4 transition duration-300"
           >
             View Chart

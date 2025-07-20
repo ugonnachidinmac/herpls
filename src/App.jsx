@@ -32,6 +32,9 @@ const SignUp = () => (
 const Login = () => (
   <DelayedLazy import={() => import("./Components/Login/Login.jsx")} />
 );
+const UserLogin = () => (
+  <DelayedLazy import={() => import("./Components/UserLogin/UserLogin.jsx")} />
+);
 const Dashboard = () => (
   <DelayedLazy import={() => import("./Components/Dashboard/Dashboard.jsx")} />
 );
@@ -53,6 +56,26 @@ const SettingPage = () => (
     import={() => import("./Components/SettingPage/SettingPage.jsx")}
   />
 );
+const AboutUs = () => (
+  <DelayedLazy
+    import={() => import("./Components/AboutUs/AboutUs.jsx")}
+  />
+);
+const UserSignUp = () => (
+  <DelayedLazy
+    import={() => import("./Components/UserSignUp/UserSignUp.jsx")}
+  />
+);
+const ChatPage = () => (
+  <DelayedLazy
+    import={() => import("./Components/ChatPage/ChatPage.jsx")}
+  />
+);
+const TestimonyForm = () => (
+  <DelayedLazy
+    import={() => import("./Components/Testimony/TestimonyForm.jsx")}
+  />
+);
 
 function App() {
   return (
@@ -60,11 +83,17 @@ function App() {
       <Route path="/" element={<HomeRoute />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/userLogin" element={<UserLogin />} />
+      <Route path="/about" element={<AboutUs />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/payment" element={<PaymentPage />} />
       <Route path="/add-listing" element={<AddNewListingpg />} />
       <Route path="/preview" element={<PreviewPage />} />
       <Route path="/settingPage" element={<SettingPage />} />
+      <Route path="/testimony-form" element={<TestimonyForm />} />
+      <Route path="/userSignUp" element={<UserSignUp />} />
+      <Route path="/chat" element={<ChatPage />} />
+
     </Routes>
   );
 }
