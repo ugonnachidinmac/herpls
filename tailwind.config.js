@@ -23,6 +23,12 @@ module.exports = {
         goldenAccent: "#F59E0B",
         deepAccent: "#D97706",
 
+        // Access Bank Color
+
+       highlights: "#F07C00",
+       buttons: "#F07C00",
+       navigation: "#002E6D",
+       headers: "#002E6D" 
       },
     },
   },

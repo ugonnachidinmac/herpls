@@ -1,29 +1,35 @@
-import React, { useRef } from 'react';
-import Hero from '../Hero/Hero';
-import RecentLists from '../RecentLists/RecentLists';
-import Testimony from '../Testimony/Testimony';
-import SearchAndExplore from '../SearchAndExplore/SearchAndExplore';
+// src/pages/HomePage.jsx
+import React, { useState, useRef } from 'react';
+import NavBar from '../../Components/NavBar/NavBar';
+import Hero from '../../Components/Hero/Hero';
+import RecentLists from '../../Components/RecentLists/RecentLists';
+import Testimony from '../../Components/Testimony/Testimony';
+import SearchAndExplore from '../../Components/SearchAndExplore/SearchAndExplore';
+import ChatSidebar from './HomePage';
 
 const HomePage = () => {
-  const searchRef = useRef(null);
+  const [showChat, setShowChat] = useState(false);
+  const searchInputRef = useRef(null); // 👈 ref to be passed
 
-  const scrollToSearch = () => {
-    searchRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const handleExploreClick = () => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus(); // 👈 focus on the input
+    }
   };
 
   return (
-    <>
-      <section className="bg-background">
-        <div>
-          <Hero onExploreClick={scrollToSearch} />
-          <RecentLists />
-          <Testimony />
-          <div ref={searchRef}>
-            <SearchAndExplore />
-          </div>
-        </div>
-      </section>
-    </>
+    <div className="relative">
+      <NavBar setShowChat={setShowChat} />
+
+      <div className="pt-[80px] bg-background">
+        <Hero onExploreClick={handleExploreClick} />
+        <RecentLists />
+        <Testimony />
+        <SearchAndExplore inputRef={searchInputRef} /> {/* 👈 pass ref */}
+      </div>
+
+      {showChat && <ChatSidebar onClose={() => setShowChat(false)} />}
+    </div>
   );
 };
 

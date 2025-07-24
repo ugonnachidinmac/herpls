@@ -1,11 +1,12 @@
+// Hero.jsx
 import React from "react";
 
 const Hero = ({ onExploreClick }) => {
   return (
-    <section className="pt-[80px] md:pt-[100px] px-6 md:px-12 bg-[#F9FAFB] mb-[30px] text-neutral">
+    <section className="pt-[30px] md:pt-[40px] px-6 md:px-12 bg-[#F9FAFB] mb-[30px] text-neutral">
       <div className="flex flex-col md:flex-row items-center justify-between gap-10 max-w-[1200px] mx-auto">
         <div className="w-full max-w-[600px]">
-          <h2 className="text-[18px] sm:text-[28px] md:text-[38px] lg:text-[45px] font-bold text-[#1B00CC] mb-4 leading-tight">
+          <h2 className="text-[18px] sm:text-[28px] md:text-[38px] lg:text-[45px] font-bold text-headers mb-4 leading-tight">
             Find Your Perfect Space, Anytime, Anywhere
           </h2>
           <p className="text-[18px] mb-3 text-justify">

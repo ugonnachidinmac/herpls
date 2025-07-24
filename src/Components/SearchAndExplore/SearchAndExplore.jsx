@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+// SearchAndExplore.jsx
+import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const SearchAndExplore = () => {
+const SearchAndExplore = ({ inputRef }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = (e) => {
@@ -11,8 +12,7 @@ const SearchAndExplore = () => {
       toast.error('Please enter a search term');
     } else {
       toast.success('Submitted successfully!');
-      // You can handle the actual search logic here
-      setSearchTerm(''); // Optional: clear field
+      setSearchTerm('');
     }
   };
 
@@ -27,6 +27,7 @@ const SearchAndExplore = () => {
         className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto"
       >
         <input
+          ref={inputRef}
           type="text"
           placeholder="Search for estate, location, type..."
           value={searchTerm}

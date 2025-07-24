@@ -7,8 +7,8 @@ import {
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
-import { LuCircleArrowLeft } from "react-icons/lu";
 import "react-toastify/dist/ReactToastify.css";
+import WelcomePgBg from '../Welcome/WelcomePgBg';
 
 const carouselImages = [
   "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1752582156/Image_16_yjgau6.png",
@@ -23,12 +23,10 @@ const fallbackImage =
 
 const UserLogin = () => {
   const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-
   const [showPassword, setShowPassword] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -42,16 +40,12 @@ const UserLogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = formData;
-
     if (!email || !password) {
       toast.error("Please enter both email and password");
       return;
     }
-
-    // Simulate login success
     toast.success("Login successful!");
-    navigate("/chat");
-
+    navigate("/homePage");
     setFormData({
       email: "",
       password: "",
@@ -66,94 +60,121 @@ const UserLogin = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-background px-4 py-6">
-      {/* Left: Form */}
-      <div className="bg-white shadow-md rounded-lg mt-[24px] h-[450px] p-8 w-full max-w-lg">
-        {/* Arrow and Heading */}
-        <div className="mb-4 flex items-center justify-between">
-          <div className="cursor-pointer" onClick={() => navigate("/")}>
-            <LuCircleArrowLeft className="text-2xl text-primary hover:text-primaryDark transition" />
-          </div>
-          <h2 className="w-[250px] text-2xl md:text-3xl font-bold text-primary px-4 py-3 border border-primary text-center rounded-[12px] mx-auto">
-            User Login
-          </h2>
-        </div>
+    <div className="relative min-h-screen w-full">
+      {/* 🔵 Background with gray blur */}
+      <div className="absolute inset-0 z-0">
+        <WelcomePgBg />
+        <div className="absolute inset-0 bg-gray-900/50 backdrop-blur-sm"></div>
+      </div>
 
-        <p className="text-center text-sm text-gray-500 mb-6">
-          Enter your email and password to login.
-        </p>
+      {/* 🔵 Login + Carousel Foreground */}
+      <section className="relative z-10 flex items-center justify-center min-h-screen px-4">
+        <div className="flex flex-col lg:flex-row bg-white/95 backdrop-blur-md shadow-lg rounded-xl overflow-hidden w-full lg:w-[900px] max-w-full">
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Email<span className="text-red-600 ml-1">*</span>
-            </label>
-            <div className="flex items-center border rounded-md px-3 py-2">
-              <FaEnvelope className="text-gray-500 mr-2" />
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full outline-none"
-              />
-            </div>
-          </div>
-
-          {/* Password */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Password<span className="text-red-600 ml-1">*</span>
-            </label>
-            <div className="flex items-center border rounded-md px-3 py-2">
-              <FaLock className="text-gray-500 mr-2" />
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                required
-                placeholder="Enter password"
-                value={formData.password}
-                onChange={handleChange}
-                className="w-full outline-none"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword((prev) => !prev)}
-                className="text-gray-500 ml-2 focus:outline-none"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-          </div>
-
-          {/* Submit */}
+          {/* 🔵 Close Button */}
           <button
-            type="submit"
-            className="w-full bg-primary text-white font-extrabold py-3 rounded-md hover:bg-accent hover:text-neutral transition tracking-widest"
+            className="absolute top-1 right-1 lg:top-6 lg:right-6 z-50 text-white bg-red-500 px-3 py-1 rounded hover:bg-red-600"
+            onClick={() => navigate("/")}
           >
-            Login
+            X
           </button>
-        </form>
 
-        <ToastContainer position="top-center" autoClose={2000} />
-      </div>
+          {/* 🔵 Left: Login Form */}
+          <div className="w-full max-w-md p-8 space-y-6">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="w-[250px] text-2xl md:text-3xl font-bold text-primary px-4 py-3 border border-primary text-center rounded-[12px] mx-auto">
+                User Login
+              </h2>
+            </div>
 
-      {/* Right: Carousel */}
-      <div className="w-full max-w-lg mt-[24px]">
-        <img
-          src={carouselImages[currentIndex]}
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = fallbackImage;
-          }}
-          alt="Real estate visual"
-          className="rounded-lg shadow-md w-full h-[300px] sm:h-[400px] lg:h-[450px] object-cover transition duration-700 ease-in-out"
-        />
-      </div>
-    </section>
+            <p className="text-center text-[12px] lg:text-[16px] text-gray-500 mb-6">
+              Enter your email and password to login.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Email<span className="text-red-600 ml-1">*</span>
+                </label>
+                <div className="flex items-center border rounded-md px-3 py-2">
+                  <FaEnvelope className="text-gray-500 mr-2" />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Password */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Password<span className="text-red-600 ml-1">*</span>
+                </label>
+                <div className="flex items-center border rounded-md px-3 py-2">
+                  <FaLock className="text-gray-500 mr-2" />
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    required
+                    placeholder="Enter password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="w-full outline-none"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    className="text-gray-500 ml-2 focus:outline-none"
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="w-full bg-primary text-white font-extrabold py-3 rounded-md hover:bg-accent hover:text-neutral transition tracking-widest"
+              >
+                Login
+              </button>
+            </form>
+
+            {/* Don’t have account */}
+            <p className="text-center text-[12px] lg:text-[16px] mt-4">
+              Don’t have an account?{" "}
+              <span
+                className="text-primary font-bold cursor-pointer"
+                onClick={() => navigate("/userSignUp")}
+              >
+                Sign Up
+              </span>
+            </p>
+
+            <ToastContainer position="top-center" autoClose={2000} />
+          </div>
+
+          {/* 🔵 Right: Carousel */}
+          <div className="w-full max-w-md">
+            <img
+              src={carouselImages[currentIndex]}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = fallbackImage;
+              }}
+              alt="Real estate visual"
+              className="rounded-none w-full h-full object-cover transition duration-700 ease-in-out"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

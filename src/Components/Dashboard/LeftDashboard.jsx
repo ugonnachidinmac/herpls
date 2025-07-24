@@ -87,7 +87,7 @@ const LeftDashboard = ({ isOpen, closeSidebar }) => {
         <div className="mt-4 mb-6">
           <button
             className="w-full bg-accent text-white py-2 rounded-md hover:bg-primaryDark transition font-semibold flex items-center justify-center gap-2 text-[16px]"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/homePage")}
           >
             <FaSignOutAlt />
             Log Out

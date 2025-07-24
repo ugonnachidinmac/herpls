@@ -91,7 +91,7 @@ const TopRightSide = () => {
                   </li>
                   <li
                     className="flex items-center gap-2 px-4 py-2 hover:bg-primaryDark hover:text-white cursor-pointer"
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/homePage")}
                   >
                     <FaSignOutAlt className="text-sm" />
                     Log Out

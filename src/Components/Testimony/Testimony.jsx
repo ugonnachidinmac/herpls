@@ -193,8 +193,9 @@ const Testimony = () => {
         </div>
         
       )}
-        <ToastContainer position="top-center" autoClose={2000} />
+       
     </section>
+     <ToastContainer position="top-center" autoClose={1000} />
    </>
   );
 };

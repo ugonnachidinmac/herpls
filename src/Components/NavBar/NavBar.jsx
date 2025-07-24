@@ -4,7 +4,7 @@ import { IoIosMenu } from "react-icons/io";
 import { FaRegWindowClose } from "react-icons/fa";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 
-function NavBar() {
+function NavBar({ setShowChat }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoginHovered, setIsLoginHovered] = useState(false);
   const redir = useNavigate();
@@ -54,16 +54,16 @@ function NavBar() {
           </Link>
         </li>
         <li>
-          <Link
-            to="/userSignUp"
+          <button
+            onClick={() => setShowChat(true)}
             className="hover:text-[#1B00CC] hover:underline hover:decoration-[#1B00CC] hover:underline-offset-4 transition duration-300"
           >
-            View Chart
-          </Link>
+            View Chat
+          </button>
         </li>
         <li>
           <Link
-            to="/portfolio"
+            to="/agent"
             className="hover:text-[#1B00CC] hover:underline hover:decoration-[#1B00CC] hover:underline-offset-4 transition duration-300"
           >
             Agents
@@ -79,14 +79,14 @@ function NavBar() {
           className={`rounded-[8px] font-bold py-2 px-4 flex items-center justify-center border transition duration-300 ${loginBtnClass}`}
         >
           <Link to="/Login">Login</Link>
-          
+
           <FaArrowRightToBracket className="ml-2" />
         </button>
 
         <button
           className={`rounded-[8px] font-bold py-2 px-4 flex items-center justify-center border transition duration-300 ${signupBtnClass}`}
         >
-      <Link to="/SignUp">Sign up</Link>
+          <Link to="/SignUp">Sign up</Link>
         </button>
       </div>
 
@@ -99,10 +99,18 @@ function NavBar() {
           <Link to="/about" className="py-2" onClick={() => setMenuOpen(false)}>
             About Us
           </Link>
-          <Link to="/portfolio" className="py-2" onClick={() => setMenuOpen(false)}>
+          <Link
+            to="/portfolio"
+            className="py-2"
+            onClick={() => setMenuOpen(false)}
+          >
             View Chart
           </Link>
-          <Link to="/portfolio" className="py-2" onClick={() => setMenuOpen(false)}>
+          <Link
+            to="/portfolio"
+            className="py-2"
+            onClick={() => setMenuOpen(false)}
+          >
             Agents
           </Link>
 
