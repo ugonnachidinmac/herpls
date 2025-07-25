@@ -2,7 +2,15 @@ import React from 'react'
 
 const SingleList = () => {
   return (
-    <div>SingleList</div>
+    <>
+    <section>
+      <div>
+        <div className="image">
+          
+        </div>
+      </div>
+    </section>
+    </>
   )
 }
 

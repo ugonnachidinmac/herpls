@@ -76,14 +76,14 @@ const Testimony = () => {
     <section className="ml-[24px] mr-[24px] mt-[50px] lg:mr-[80px] mb-[20px] lg:ml-[80px] relative">
   
           
-      <h3 className="text-[26px] md:text-[34px] font-extrabold text-primary mb-6 text-center">
+      <h3 className="text-[26px] md:text-[34px] font-extrabold text-headers mb-6 text-center">
         What Clients Say
       </h3>
 
       {testimonies.map((item) => (
         <div
           key={item.id}
-          className="bg-softAccent text-neutral pt-[25px] pr-[25px] pb-[5px] pl-[25px] rounded-[10px] mb-[20px] hover:bg-accent"
+          className="bg-softAccent text-neutral pt-[25px] pr-[25px] pb-[5px] pl-[25px] rounded-[10px] mb-[20px] hover:bg-buttons"
         >
           <div
             className="flex justify-between items-center cursor-pointer pb-[20px]"
@@ -110,11 +110,11 @@ const Testimony = () => {
       <div className="flex justify-between mt-8">
         <button
           onClick={() => setShowForm(true)}
-          className="bg-accent text-neutral px-6 py-3 rounded-lg font-bold hover:bg-primaryDark hover:text-background transition"
+          className="bg-buttons text-neutral px-6 py-3 rounded-lg font-bold hover:bg-headers hover:text-background transition"
         >
           Create Testimony
         </button>
-        <button className="bg-accent text-neutral px-6 py-3 font-bold hover:bg-primaryDark hover:text-background transition rounded-[32px]">
+        <button className="bg-buttons text-neutral px-6 py-3 font-bold hover:bg-headers hover:text-background transition rounded-[32px]">
           See More
         </button>
       </div>
@@ -123,7 +123,7 @@ const Testimony = () => {
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg w-full max-w-xl">
-            <h2 className="text-xl font-bold mb-4 text-primary">
+            <h2 className="text-xl font-bold mb-4 text-headers">
               Submit Your Testimony
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -176,13 +176,13 @@ const Testimony = () => {
                 <button
                   type="button"
                   onClick={() => setShowForm(false)}
-                  className="bg-softAccent font-bold text-black px-4 py-2 hover:text-white rounded hover:bg-accent"
+                  className="bg-softAccent font-bold text-black px-4 py-2 hover:text-white rounded hover:bg-buttons"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-primary text-white px-4 py-2 rounded hover:bg-primaryDark"
+                  className="bg-headers text-white px-4 py-2 rounded hover:bg-headers"
                 >
                   Submit
                 </button>

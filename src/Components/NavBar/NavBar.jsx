@@ -11,12 +11,12 @@ function NavBar({ setShowChat }) {
 
   // Dynamic button classes
   const loginBtnClass = isLoginHovered
-    ? "bg-[#1B00CC] text-white border-[#1B00CC]"
-    : "bg-white text-[#1B00CC] border-[#1B00CC]";
+    ? "bg-headers text-white border-headers"
+    : "bg-white text-headers border-headers";
 
   const signupBtnClass = isLoginHovered
-    ? "bg-white text-[#1B00CC] border-[#1B00CC]"
-    : "bg-[#1B00CC] text-white border-[#1B00CC]";
+    ? "bg-white text-headers border-headers"
+    : "bg-headers text-white border-headers";
 
   return (
     <nav className="bg-white w-full h-[80px] flex items-center justify-between px-6 md:px-10 fixed z-50 shadow">
@@ -40,7 +40,7 @@ function NavBar({ setShowChat }) {
         <li>
           <Link
             to="/"
-            className="hover:text-[#1B00CC] hover:underline hover:decoration-[#1B00CC] hover:underline-offset-4 transition duration-300"
+            className="hover:text-headers hover:underline hover:decoration-headers hover:underline-offset-4 transition duration-300"
           >
             Home
           </Link>
@@ -48,7 +48,7 @@ function NavBar({ setShowChat }) {
         <li>
           <Link
             to="/about"
-            className="hover:text-[#1B00CC] hover:underline hover:decoration-[#1B00CC] hover:underline-offset-4 transition duration-300"
+            className="hover:text-headers hover:underline hover:decoration-headers hover:underline-offset-4 transition duration-300"
           >
             About Us
           </Link>
@@ -56,7 +56,7 @@ function NavBar({ setShowChat }) {
         <li>
           <button
             onClick={() => setShowChat(true)}
-            className="hover:text-[#1B00CC] hover:underline hover:decoration-[#1B00CC] hover:underline-offset-4 transition duration-300"
+            className="hover:text-headers hover:underline hover:decoration-headers hover:underline-offset-4 transition duration-300"
           >
             View Chat
           </button>
@@ -64,7 +64,7 @@ function NavBar({ setShowChat }) {
         <li>
           <Link
             to="/agent"
-            className="hover:text-[#1B00CC] hover:underline hover:decoration-[#1B00CC] hover:underline-offset-4 transition duration-300"
+            className="hover:text-headers hover:underline hover:decoration-headers hover:underline-offset-4 transition duration-300"
           >
             Agents
           </Link>

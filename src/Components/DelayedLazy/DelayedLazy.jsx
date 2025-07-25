@@ -26,8 +26,8 @@ const DelayedLazy = ({ import: importFn, delay = 1000, fallback }) => {
         fallback ?? (
           <div className="min-h-screen flex items-center justify-center bg-white">
             <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-primary font-semibold text-lg">
+              <div className="w-12 h-12 border-4 border-headers border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-headers font-semibold text-lg">
                 Please wait…
               </p>
             </div>

@@ -1,0 +1,18 @@
+Here are the official Access Bank brand colours:
+
+🟠 Primary Brand Colors
+Color	HEX Code	Description
+Orange	#F07C00	Primary brand orange
+Navy Blue	#002E6D	Deep blue (trust, stability)
+Light Grey	#F2F2F2	Clean background tone
+White	#FFFFFF	For clean spacing
+Dark Grey	#4D4D4D	For text or contrast use
+
+🌈 Suggested Usage
+Buttons & Highlights: #F07C00 (orange)
+
+Navigation & Headers: #002E6D (navy blue)
+
+Backgrounds: #F2F2F2 or white
+
+Text: #4D4D4D for body; white or blue for headings depending on background

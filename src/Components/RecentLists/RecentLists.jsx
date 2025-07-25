@@ -5,7 +5,7 @@ const RecentLists = () => {
   return (
     <section className="pt-[10px] md:pt-[20px] px-6 sm:px-8 md:px-12 bg-background mb-[30px] text-neutral">
       <div className="max-w-[1200px] mx-auto mb-[20px]">
-        <h2 className="text-[22px] sm:text-[26px] md:text-[32px] text-center font-bold text-[#1B00CC] mb-4">
+        <h2 className="text-[22px] sm:text-[26px] md:text-[32px] text-center font-bold text-headers mb-4">
           Recently Added Listings
         </h2>
 
@@ -18,7 +18,7 @@ const RecentLists = () => {
           </p>
 
           <div className="md:self-start">
-            <button className="bg-accent text-white font-bold px-6 py-3 rounded-lg hover:bg-primary hover:text-txtWhite transition w-full md:w-auto">
+            <button className="bg-buttons text-neutral font-bold px-6 py-3 rounded-lg hover:bg-headers hover:text-txtWhite transition w-full md:w-auto">
               View All
             </button>
           </div>

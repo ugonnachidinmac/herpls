@@ -97,13 +97,13 @@ const SignUp = () => {
   return (
     <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-background px-4 py-6">
       {/* Left: Form */}
-      <div className="bg-white shadow-md rounded-lg mt-[24px] p-8 w-full max-w-lg">
+      <div className="bg-white shadow-2xl rounded-lg mt-[24px] p-8 w-full max-w-lg">
         {/* Arrow and Heading */}
         <div className="mb-4 flex gap-[15px] items-center justify-between">
-          <div className="cursor-pointer" onClick={() => navigate("/")}>
-            <LuCircleArrowLeft className="text-2xl text-primary hover:text-primaryDark transition" />
+          <div className="cursor-pointer" onClick={() => navigate("/homePage")}>
+            <LuCircleArrowLeft className="text-2xl text-headers hover:text-headers transition" />
           </div>
-          <h2 className="w-[250px] text-1xl md:text-3xl font-bold text-primary px-4 py-3 border border-primary text-center rounded-[12px] mx-auto">
+          <h2 className="w-[250px] text-1xl md:text-3xl font-bold text-headers px-4 py-3 border border-headers text-center rounded-[12px] mx-auto">
             Agent Sign Up
           </h2>
         </div>
@@ -257,11 +257,21 @@ const SignUp = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-primary text-white font-extrabold py-3 rounded-md hover:bg-accent hover:text-neutral transition tracking-widest"
+            className="w-full bg-headers text-white font-extrabold py-3 rounded-md hover:bg-buttons hover:text-neutral transition tracking-widest"
           >
             Sign Up
           </button>
         </form>
+
+         <p className="text-sm text-center mt-4">
+              Already have an account?{" "}
+              <span
+                onClick={() => navigate("/login")}
+                className="text-buttons cursor-pointer hover:text-headers  font-semibold"
+              >
+                Login
+              </span>
+            </p>
 
         <ToastContainer position="top-center" autoClose={2000} />
       </div>

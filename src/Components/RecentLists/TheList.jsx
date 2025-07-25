@@ -65,7 +65,7 @@ const TheList = () => {
 
             <div className="p-5 flex flex-col flex-grow justify-between">
               <div>
-                <h6 className="text-[18px] font-bold text-[#1B00CC] mb-2">
+                <h6 className="text-[18px] font-bold text-headers mb-2">
                   {item.listTitle}
                 </h6>
                 <p className="text-gray-700 mb-4">{item.hit}</p>
@@ -77,7 +77,7 @@ const TheList = () => {
                       {item.agentName}
                     </span>
                   </p>
-                  <p className="font-bold text-[16px] text-primaryDark">
+                  <p className="font-bold text-[16px] text-headers">
                     {item.listType}
                   </p>
                 </div>
@@ -95,7 +95,7 @@ const TheList = () => {
               </div>
 
               <div className="flex justify-end">
-                <button className="bg-[#1B00CC] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#150099] transition">
+                <button className="bg-headers text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-headers transition">
                   View Full Details
                 </button>
               </div>

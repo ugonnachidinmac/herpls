@@ -77,7 +77,7 @@ const UserSignUp = () => {
           {/* 🔵 Left: Sign Up Form */}
           <div className="w-full max-w-md p-8 space-y-6">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="w-[250px] text-[14px] md:text-[18px] font-bold text-primary px-4 py-3 border border-primary text-center rounded-[12px] mx-auto">
+              <h2 className="w-[250px] text-[14px] md:text-[18px] font-bold text-headers px-4 py-3 border border-headers text-center rounded-[12px] mx-auto">
                 Create User Account
               </h2>
             </div>
@@ -89,7 +89,7 @@ const UserSignUp = () => {
                   <input
                     type="text"
                     name="name"
-                    className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-buttons"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter name"
@@ -100,7 +100,7 @@ const UserSignUp = () => {
                   <input
                     type="text"
                     name="username"
-                    className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-buttons"
                     value={formData.username}
                     onChange={handleChange}
                     placeholder="Enter username"
@@ -113,7 +113,7 @@ const UserSignUp = () => {
                 <input
                   type="email"
                   name="email"
-                  className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-buttons"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter email"
@@ -125,7 +125,7 @@ const UserSignUp = () => {
                 <input
                   type="text"
                   name="location"
-                  className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-buttons"
                   value={formData.location}
                   onChange={handleChange}
                   placeholder="Enter location"
@@ -137,7 +137,7 @@ const UserSignUp = () => {
                 <input
                   type="password"
                   name="password"
-                  className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-buttons"
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="Enter password"
@@ -146,7 +146,7 @@ const UserSignUp = () => {
 
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-3 rounded-md font-bold hover:bg-accent transition"
+                className="w-full bg-headers text-white py-3 rounded-md font-bold hover:bg-buttons hover:text-black transition"
               >
                 Sign Up
               </button>
@@ -156,7 +156,7 @@ const UserSignUp = () => {
               Already have an account?{" "}
               <span
                 onClick={() => navigate("/userLogin")}
-                className="text-accent cursor-pointer font-semibold"
+                className="text-buttons cursor-pointer hover:text-headers  font-semibold"
               >
                 Login
               </span>

@@ -82,7 +82,7 @@ const UserLogin = () => {
           {/* 🔵 Left: Login Form */}
           <div className="w-full max-w-md p-8 space-y-6">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="w-[250px] text-2xl md:text-3xl font-bold text-primary px-4 py-3 border border-primary text-center rounded-[12px] mx-auto">
+              <h2 className="w-[250px] text-2xl md:text-3xl font-bold text-headers px-4 py-3 border border-headers text-center rounded-[12px] mx-auto">
                 User Login
               </h2>
             </div>
@@ -140,7 +140,7 @@ const UserLogin = () => {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full bg-primary text-white font-extrabold py-3 rounded-md hover:bg-accent hover:text-neutral transition tracking-widest"
+                className="w-full bg-headers text-white font-extrabold py-3 rounded-md hover:bg-buttons hover:text-neutral transition tracking-widest"
               >
                 Login
               </button>
@@ -150,7 +150,7 @@ const UserLogin = () => {
             <p className="text-center text-[12px] lg:text-[16px] mt-4">
               Don’t have an account?{" "}
               <span
-                className="text-primary font-bold cursor-pointer"
+                className="text-headers font-bold cursor-pointer hover:text-buttons"
                 onClick={() => navigate("/userSignUp")}
               >
                 Sign Up

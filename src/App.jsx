@@ -47,7 +47,7 @@ const TestimonyForm = () => (
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div></div>}>
       <Routes>
         {/* Pages wrapped in layout */}
         <Route path="/homePage" element={<Applayout><HomePage /></Applayout>} />

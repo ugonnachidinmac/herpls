@@ -26,7 +26,7 @@ const Hero = ({ onExploreClick }) => {
 
           <button
             onClick={onExploreClick}
-            className="bg-accent text-neutral font-bold px-6 py-3 rounded-lg hover:bg-primary hover:text-txtWhite transition"
+            className="bg-buttons text-neutral font-bold px-6 py-3 rounded-lg hover:bg-primary hover:text-txtWhite transition"
           >
             Explore Listings
           </button>

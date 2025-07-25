@@ -44,7 +44,7 @@ const Welcome = () => {
 
         {/* Left Content */}
         <div className="text-center md:text-left flex-1">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-headers mb-4 md:mb-6">
             Welcome to Herpls
           </h1>
           <p className="mb-6 md:mb-8 text-base md:text-lg text-gray-700">
@@ -52,7 +52,7 @@ const Welcome = () => {
           </p>
           <button
             onClick={() => navigate("/userLogin")}
-            className="px-6 py-3 bg-primary text-white rounded-md hover:bg-accent transition text-sm sm:text-base"
+            className="px-6 py-3 bg-txtheaders text-white rounded-md hover:bg-buttons transition text-sm sm:text-base"
           >
             Get Started
           </button>

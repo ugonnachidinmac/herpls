@@ -28,7 +28,10 @@ module.exports = {
        highlights: "#F07C00",
        buttons: "#F07C00",
        navigation: "#002E6D",
-       headers: "#002E6D" 
+       headers: "#002E6D",
+       txtheaders: "#002E6D",
+       backgrounds: "#F2F2F2", 
+       text: "#4D4D4D" 
       },
     },
   },
