@@ -66,8 +66,8 @@ const LeftDashboard = ({ isOpen, closeSidebar }) => {
                   }}
                   className={`flex items-center gap-4 cursor-pointer px-3 py-2 rounded-lg transition ${
                     isActive
-                      ? "bg-primary text-white"
-                      : "text-neutral-700 hover:bg-primaryDark hover:text-white"
+                      ? "bg-headers text-white"
+                      : "text-neutral-700 hover:bg-headers hover:text-white"
                   }`}
                 >
                   <span
@@ -86,7 +86,7 @@ const LeftDashboard = ({ isOpen, closeSidebar }) => {
 
         <div className="mt-4 mb-6">
           <button
-            className="w-full bg-accent text-white py-2 rounded-md hover:bg-primaryDark transition font-semibold flex items-center justify-center gap-2 text-[16px]"
+            className="w-full bg-buttons text-white py-2 rounded-md hover:bg-headers transition font-semibold flex items-center justify-center gap-2 text-[16px]"
             onClick={() => navigate("/homePage")}
           >
             <FaSignOutAlt />

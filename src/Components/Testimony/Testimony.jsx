@@ -41,6 +41,7 @@ const Testimony = () => {
   const [formData, setFormData] = useState({
     name: "",
     role: "",
+    contant: "",
     city: "",
     country: "",
     message: "",
@@ -65,6 +66,7 @@ const Testimony = () => {
     setFormData({
       name: "",
       role: "",
+      contant: "",
       city: "",
       country: "",
       message: "",
@@ -136,7 +138,8 @@ const Testimony = () => {
                 className="w-full border border-gray-300 px-4 py-2 rounded"
                 required
               />
-              <input
+            <div className="flex gap-[10px]">
+                <input
                 type="text"
                 name="role"
                 placeholder="Role (e.g., Agent, Landlord)"
@@ -145,6 +148,16 @@ const Testimony = () => {
                 className="w-full border border-gray-300 px-4 py-2 rounded"
                 required
               />
+                <input
+                type="text"
+                name="contant"
+                placeholder="contant e.g 0007778885522"
+                value={formData.contant}
+                onChange={handleChange}
+                className="w-full border border-gray-300 px-4 py-2 rounded"
+                required
+              />
+            </div>
               <input
                 type="text"
                 name="city"

@@ -13,7 +13,7 @@ const MainPage = () => {
   const [listings, setListings] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const COLORS = ["#150099", "#FBBF24", "#036444"];
+  const COLORS = ["#002E6D", "#F07C00", "#036444"];
   const renderCustomizedLabel = ({ percent }) =>
     `${(percent * 100).toFixed(0)}%`;
 
@@ -62,7 +62,7 @@ const MainPage = () => {
   }, []);
 
   return (
-    <section className="flex flex-col lg:flex-row gap-[25px] bg-primaryDarkest w-full max-w-[1100px] rounded-xl p-2 mb-6 mx-auto">
+    <section className="flex flex-col lg:flex-row gap-[25px] bg-headers w-full max-w-[1100px] rounded-xl p-2 mb-6 mx-auto">
       {/* Pie Chart */}
       <div className="flex-1 bg-white rounded-xl shadow-md p-4">
         <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">

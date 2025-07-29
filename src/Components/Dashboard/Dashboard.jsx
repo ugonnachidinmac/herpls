@@ -14,7 +14,7 @@ const Dashboard = () => {
       {/* Mobile Header with Hamburger */}
       <div className="lg:hidden flex items-center justify-between px-4 py-3 shadow  sticky top-0 z-50">
         <button onClick={toggleSidebar}>
-          <FaBars className="text-xl text-primary" />
+          <FaBars className="text-xl text-headers" />
         </button>
         {/* <h1 className="text-lg font-semibold text-primary">Dashboard</h1> */}
         <div /> {/* Spacer for symmetry */}

@@ -15,8 +15,13 @@ const PreviewPage = () => {
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    if (name === "image") {
-      setFormData({ ...formData, image: files[0] });
+
+    // Handle individual image updates
+    if (name.startsWith("image")) {
+      const index = parseInt(name.replace("image", ""));
+      const updatedImages = [...(formData.images || [])];
+      updatedImages[index] = files[0];
+      setFormData({ ...formData, images: updatedImages });
     } else {
       setFormData({ ...formData, [name]: value });
     }
@@ -25,10 +30,11 @@ const PreviewPage = () => {
   const handleSubmit = () => {
     console.log("Submitted data:", formData);
     alert("Listing submitted successfully!");
+    navigate("/add-listing"); // Navigate back after submission
   };
 
   const goBack = () => {
-    navigate("/add-listing"); // Update the path if your form is under a different route
+    navigate("/add-listing");
   };
 
   return (
@@ -42,28 +48,29 @@ const PreviewPage = () => {
         </button>
       </div>
 
-      <h2 className="text-2xl font-bold mb-4 text-primary">Preview Listing</h2>
+      <h2 className="text-2xl font-bold mb-4 text-headers">Preview Listing</h2>
 
-      {formData.image && (
-        <div className="my-4">
-          <img
-            src={
-              typeof formData.image === "string"
-                ? formData.image
-                : URL.createObjectURL(formData.image)
-            }
-            alt="Listing"
-            className="mx-auto w-72 h-48 object-cover rounded"
-          />
+      {formData.images && formData.images.length > 0 && (
+        <div className="my-4 flex gap-4 justify-center flex-wrap">
+          {formData.images.map((img, idx) => (
+            <img
+              key={idx}
+              src={typeof img === "string" ? img : URL.createObjectURL(img)}
+              alt={`Listing ${idx + 1}`}
+              className="w-40 h-32 object-cover rounded"
+            />
+          ))}
         </div>
       )}
 
       <div className="space-y-3 text-left">
         {[
           ["Title", "title"],
+          ["Hit", "hit"],
           ["Agent", "agent"],
           ["Price", "price"],
           ["Type", "type"],
+          ["Landmark", "landMark"],
           ["City", "city"],
           ["State", "state"],
           ["Country", "country"],
@@ -99,14 +106,18 @@ const PreviewPage = () => {
 
         {isEditing && (
           <div>
-            <label className="font-semibold">Change Image:</label><br />
-            <input
-              type="file"
-              name="image"
-              accept="image/*"
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded"
-            />
+            <label className="font-semibold">Change Images (up to 3):</label><br />
+            {[0, 1, 2].map((index) => (
+              <div key={index} className="my-1">
+                <input
+                  type="file"
+                  name={`image${index}`}
+                  accept="image/*"
+                  onChange={handleChange}
+                  className="block"
+                />
+              </div>
+            ))}
           </div>
         )}
       </div>
@@ -120,7 +131,7 @@ const PreviewPage = () => {
         </button>
         <button
           onClick={handleSubmit}
-          className="px-4 py-2 bg-primary text-white rounded hover:bg-accent"
+          className="px-4 py-2 bg-headers text-white rounded hover:bg-buttons"
         >
           {isEditing ? "Save & Submit" : "Submit"}
         </button>
